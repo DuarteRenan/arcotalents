@@ -1,6 +1,8 @@
 # Arco Talents
 
 > Plataforma de carreira no ensino bilíngue
+![Banner do Projeto](https://raw.githubusercontent.com/DuarteRenan/arcotalents/refs/heads/main/public/banner.avif)
+
 
 ## 🚀 Tech Stack
 
