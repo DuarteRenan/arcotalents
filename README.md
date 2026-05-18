@@ -1,43 +1,52 @@
-# Astro Starter Kit: Minimal
+# Arco Talents
 
-```sh
-pnpm create astro@latest -- --template minimal
+> Plataforma de carreira no ensino bilíngue
+
+## 🚀 Tech Stack
+
+- **[Astro 6](https://astro.build/)** - Web framework
+- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS
+- **[GSAP](https://gsap.com/)** - Animations
+- **[Sharp](https://sharp.pixelplumbing.com/)** - Image optimization
+- **TypeScript** - Type safety
+
+## 📁 Project Structure
+
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
+├── public/                 # Static assets
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── assets/             # Images, fonts, etc
+│   ├── components/
+│   │   ├── layout/         # Layout components
+│   │   ├── sections/       # Page sections
+│   │   │   └── home/       # Homepage sections
+│   │   └── ui/             # Reusable UI components
+│   ├── layouts/            # Page layouts
+│   ├── pages/              # Routes
+│   ├── scripts/            # Client-side JS/TS
+│   └── styles/             # Global styles
+├── astro.config.mjs
+├── tailwind.config.js
+├── tsconfig.json
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command            | Description                           |
+|--------------------|---------------------------------------|
+| `pnpm install`     | Install dependencies                  |
+| `pnpm dev`         | Start dev server at `localhost:4321`  |
+| `pnpm build`       | Build for production                  |
+| `pnpm preview`     | Preview production build locally      |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 🌐 Site
 
-## 👀 Want to learn more?
+- **URL**: https://arcotalents.com.br
+- **Output**: Static site
+- **Features**: Sitemap, prefetch, image optimization
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📋 Requirements
+
+- Node.js >= 22.12.0
+- pnpm
