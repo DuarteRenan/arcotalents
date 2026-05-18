@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+
+import heroImg  from '../../../assets/images/hero-img.png';
+import bg from '../../../assets/images/hero-bg.png';
+import logo from '../../../assets/images/logo-2.png';
+---
+
+<section class="relative overflow-hidden grid grid-cols-1 lg:grid-cols-2 xl:h-full xl:max-h-screen text-white  font-ui place-items-center xl:w-full xl:aspect-video hero">
+     
+     <div class="hidden lg:block absolute bg-azul-escuro  h-full w-full lg:w-3/5 left-0 rounded-r-3xl"></div>
+     
+     <div class="min-h-full w-full relative z-1 justify-self-end rounded-b-3xl max-lg:container lg:max-w-180 flex flex-col justify-center gap-m py-l-xl bg-azul-escuro" style="padding-inline: clamp(1.5rem, 5.5vw, 5rem);">
+        
+             <a href="/" aria-label="Logo da Arco Talents" target="_self" class="block w-full mb-s">
+               <Image  src={logo} alt="Logo da Arco Talents" title="Logotipo Arco Talents" class="w-full max-w-[30%] lg:max-w-[50%] h-auto" format="avif" fetchpriority="high" quality={80} loading="eager" decoding="async" />
+             </a>
+                <h1 class=" text-3xl md:text-4xl lg:text-5xl xl:text-5xl  z-0 ">
+                    <strong>
+                    Sua carreira no ensino bilíngue <span class="text-laranja-medio">começa aqui.</span>
+                  </strong>
+         
+                </h1>
+                <p class="leading-relaxed text-xl md:text-xl lg:text-2xl 2xl:text-3xl z-0 font-bold lg:max-w-[23ch]">
+                   O Talents transforma a busca por emprego em ascensão profissional.
+                </p>
+         
+                <p class="text-base leading-relaxed sm:text-lg  xl:text-xl 2xl:text-2xl z-0 lg:max-w-[30ch]">
+                 Conectamos você às vagas de emprego abertas pelas escolas parceiras da Arco e que utilizam nossas soluções bilíngues.
+                </p>
+            
+     </div>
+   
+        <!-- Arco 1 (atrás) -->
+    <svg class="absolute  top-[90%] bottom-0 right-0 h-auto w-[50%] z-0  lg:top-0 block"
+         viewBox="0 0 1088 943" fill="none" preserveAspectRatio="xMidYMax meet"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M834.085 0C889.194 2.17461 914.228 24.2851 928.811 44.7871L1660.21 1005.73C1660.21 1005.73 1290.46 1173.55 1115.17 875.552C939.985 577.682 833.511 189.445 833.367 188.92C833.259 189.302 723.656 576.87 546.062 873.684C368.498 1170.45 0.48905 1000.59 0 1000.36L738.997 44.1514C753.665 23.6635 778.959 1.7472 834.085 0Z" fill="url(#arco-grad-1)"/>
+      <defs>
+        <linearGradient id="arco-grad-1" x1="750.124" y1="-70.9897" x2="733.691" y2="847.618" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F05A41"/>
+          <stop offset="1" stop-color="white" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    
+        
+          <Image src={bg} alt="Background" class="-z-1 w-full h-full object-cover absolute parallaxBg" fetchpriority="high" quality={80} loading="eager" decoding="async" format="avif"/>
+
+           <!-- Arco 2 (frente) -->
+    <svg class="absolute top-[80%] bottom-0 right-0 h-auto w-[50%] z-2  lg:top-[35%]"
+         viewBox="0 0 1088 943" fill="none" preserveAspectRatio="xMidYMax meet"
+         xmlns="http://www.w3.org/2000/svg">
+      <path d="M834.085 0C889.194 2.17461 914.228 24.2851 928.811 44.7871L1660.21 1005.73C1660.21 1005.73 1290.46 1173.55 1115.17 875.552C939.985 577.682 833.511 189.445 833.367 188.92C833.259 189.302 723.656 576.87 546.062 873.684C368.498 1170.45 0.48905 1000.59 0 1000.36L738.997 44.1514C753.665 23.6635 778.959 1.7472 834.085 0Z" fill="url(#arco-grad-2)"/>
+      <defs>
+        <linearGradient id="arco-grad-2" x1="750.124" y1="-70.9897" x2="733.691" y2="847.618" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#F05A41" stop-opacity="0.5"/>
+          <stop offset="1" stop-color="white" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+    </svg>
+
+        
+    <Image src={heroImg} alt="Profissional sorrindo" class="h-[30vh] z-1 object-cover object-top lg:h-auto w-full lg:w-[46%] lg:absolute bottom-0 lg:left-2/5 parallaxImg"  fetchpriority="high" quality={80} loading="eager" decoding="async"  format="avif"/>
+</section>
+
+
+  

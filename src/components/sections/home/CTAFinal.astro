@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+
+import sectionImg  from '../../../assets/images/cta-img.png';
+import sectionBg from '../../../assets/images/cta-bg.png';
+---
+
+<section class="relative overflow-hidden">
+    <div class="container pt-xl grid lg:grid-cols-2 place-content-center items-center">
+        <div class="min-h-full flex flex-col gap-x justify-center z-1 pb-s">
+            <h2 class="font-bold text-2xl md:text-2xl xl:text-5xl xl:max-w-[15ch] mb-m xl:mb-m split">
+                Seja um talento em uma das escolas parceiras Arco.
+            </h2>
+            <p class="text-lg leading-snug xl:text-2xl max-w-[25ch]">
+                Cadastre-se e comece hoje a construir a sua carreira de sucesso nas <strong>melhores escolas do Brasil.</strong>
+            </p>
+            <a href="https://arcoeducacacao.typeform.com/to/n0VaT1Vl" target="_blank" rel="noopener noreferrer" class="uppercase font-bold my-m px-l py-xs bg-laranja-medio text-white rounded-full flex justify-start items-start flex-col w-fit xl:text-2xl pop" aria-label="Inscreva-se agora no arco talents">Inscreva-se agora</a>
+            <p class="block text-sm xl:max-w-[60ch] fade-up">
+                <strong>Critérios de elegibilidade:</strong> Possuir Ensino Superior (completo ou em andamento) em qualquer área <strong>OU</strong> possuir certificação técnica profissional de ensino de línguas (CELTA, CertTESOL, TKT).
+            </p>
+            <p class="block text-sm pt-s xl:max-w-[60ch] fade-up">Pessoas candidatas que possuam apenas o Ensino Médio ou Técnico serão automaticamente desclassificadas.</p>
+        </div>
+            <figure class="relative w-full min-h-full flex justify-center items-center z-1">
+            <Image src={sectionImg} alt="Profissional bilingue sorrindo" class="relative z-1 w-auto h-full  object-cover fade-up" fetchpriority="high" quality={80} loading="eager" decoding="async" format="avif"/>
+            </figure>
+
+            <Image src={sectionBg} alt="Background" class="absolute z-0 h-auto block w-full bottom-0 right-[-10%] mask-x-from-10% mask-t-from-0"
+ fetchpriority="high" quality={80} loading="eager" decoding="async" format="avif"/>
+    </div>
+</section>

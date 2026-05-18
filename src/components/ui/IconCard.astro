@@ -1,0 +1,38 @@
+---
+import Icon from './Icon.astro'
+
+interface Props {
+  iconId: string;
+  title?: string;
+  text: string;
+  iconBg?: string;
+  iconColor?: string;
+  extraClasses?: string;
+}
+
+const {
+  iconId,
+  title,
+  text,
+  extraClasses,
+  iconBg = "bg-laranja-medio",
+  iconColor = "text-white",
+} = Astro.props;
+---
+
+
+<article class=`h-full bg-laranja-medio p-s-m rounded-tl-3xl rounded-br-3xl gap-s grid  text-white ${extraClasses} place-items-start justify-items-start place-content-start`>
+                        <div>
+                            <figure class={`${iconBg} ${iconColor} bg-white p-2xs rounded-full text-white w-fit max-h-fit pop`}>
+                                <Icon id={iconId} class=" w-auto h-10 lg:h-12" />
+                            </figure>
+                        </div>
+                        <div class="h-fit">
+                            <h3 class="text-base leading-relaxed sm:text-lg  xl:text-xl ">
+                                <strong>{title}</strong>
+                            </h3>
+                            <p class="text-base leading-relaxed sm:text-lg  xl:text-xl">
+                             {text}
+                            </p>
+                        </div>
+                    </article>

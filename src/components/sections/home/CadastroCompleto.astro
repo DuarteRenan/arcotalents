@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+
+import sectionBg from '../../../assets/images/section-2-bg.png';
+
+import IconCard from "../../ui/IconCard.astro"
+
+const cards1 = [
+    {
+        iconId:'play',
+        title:'Webinar gratuito',
+        text:'Garanta acesso imediato ao webinar exclusivo da Arco cujo tema será revelado em breve.',
+    },
+    {
+        iconId:'livro',
+        title:'Livros',
+        text:'As 40 primeiras pessoas candidatas que finalizarem o cadastro e também um dos cursos disponibilizados em nosso ambiente de aprendizagem, receberão um exemplar físico de obras de autoras renomadas como Penny Ur e Carol Simon Weinstein.',
+    },
+    {
+        iconId:'roleta',
+        title:'Sorteio para ida ao IATEFL',
+        text:'Ao se cadastrar e finalizar um de nossos cursos, você também concorre ao sorteio de uma viagem internacional ao Congresso Internacional IATEFL, que será realizado na Inglaterra (2027).',
+    }
+]
+---
+
+<section class="relative  bg-azul-escuro text-white overflow-hidden">
+    <div class="container min-h-full py-2xl relative z-1">
+        <h2 class="font-bold text-2xl md:text-2xl xl:text-4xl text-center max-w-[50ch] mx-auto pb-l z-1">
+           O cadastro completo no Talents é a chave para acessar incentivos exclusivos de formação e reconhecimento:
+
+        </h2>
+
+        <section class="min-h-full relative grid xl:grid-cols-3 gap-l z-1 overflow-hidden!">
+             
+                 {
+                                    cards1.map((card,index) => (
+                 
+                                          <div class="card overflow-hidden!" style={`z-index: ${index + 1}`}>
+                                              <IconCard
+                                                            iconId={card.iconId}
+                                                            title={card.title}
+                                                            text={card.text}
+                                                            />
+                                          </div>
+                 
+                                ))
+                                }
+             
+        </section>
+
+
+
+    </div>
+    <Image src={sectionBg} alt="Background" class="absolute bottom-0 right-0 z-0 h-auto block w-[90%] mask-t-from-0%"
+ fetchpriority="high" quality={80} loading="eager" decoding="async" format="avif"/>
+</section>

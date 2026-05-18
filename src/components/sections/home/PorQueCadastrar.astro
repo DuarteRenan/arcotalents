@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+
+import sectionImg  from '../../../assets/images/section-img.png';
+import sectionBg from '../../../assets/images/section-bg.png';
+
+import IconCard from "../../ui/IconCard.astro"
+
+const cards1 = [
+    {
+        iconId:'alvo',
+        title:'Acesso a oportunidades de elite',
+        text:'Receba indicações para vagas nas escolas que usam soluções bilíngues da Arco, ampliando suas chances de recolocação e crescimento na carreira',
+    },
+    {
+        iconId:'escada',
+        title:'Desenvolvimento profissional contínuo (CPD):',
+        text:'Tenha acesso a cursos e trilhas de capacitação contínua. Seja você um professor experiente ou em desenvolvimento, oferecemos trilhas customizadas para acelerar sua ascensão profissional.',
+    }
+]
+---
+
+<section class="relative overflow-hidden">
+    <div class="container grid lg:grid-cols-2 gap-l pt-xl-2xl relative z-2">
+        <h2 class="font-bold text-2xl md:text-2xl xl:text-4xl fade-up">
+            Por que o cadastro no Talents deve ser o <span class="text-laranja-medio">próximo passo na sua jornada profissional?</span>
+        </h2>
+        <p class="text-base leading-relaxed sm:text-lg  xl:text-xl 2xl:text-2xl fade-up">
+            O <strong>Talents</strong> não é apenas um repositório de currículos, mas um ecossistema projetado para reconhecer, desenvolver e conectar os melhores talentos do mercado à rede de escolas que utilizam as soluções bilíngues da Arco.
+        </p>
+    </div>
+    <div class="container relative grid xl:grid-cols-2 gap-l z-1">
+    
+        <section class="h-full relative xl:order-2 py-l space-y-s">
+             {
+                                cards1.map((card) => (
+                                    <div class="h-auto! items-stretch! fade-up">
+                                        <IconCard 
+                                            iconId={card.iconId}
+                                            title={card.title}
+                                            text={card.text}
+                                            extraClasses="lg:grid-cols-[auto_1fr]"
+                                            />
+                                    </div>
+                            ))
+                            }        
+        </section>
+
+           <div class="relative w-full h-fit min-h-full flex flex-col justify-end">
+             <Image src={sectionImg} alt="Background" class="relative z-1 w-auto fade-up h-full object-contain max-h-150 lg:max-h-none" fetchpriority="high" quality={80} loading="eager" decoding="async" format="avif"/>
+        </div>
+
+<Image src={sectionBg} alt="Background" class="absolute bottom-0 z-0 h-auto block w-full lg:w-[50%] 2xl:w-full 2xl:right-[17%] 2xl:bottom-[-30%] "
+ fetchpriority="high" quality={80} loading="eager" decoding="async" format="avif"/>
+    </div>
+</section>

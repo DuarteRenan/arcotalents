@@ -1,0 +1,157 @@
+---
+import { getImage } from 'astro:assets';
+import { AstroFont } from "astro-font";
+import '../styles/global.css';
+
+import SvgDef from '../components/ui/SvgDef.astro';
+
+
+interface Props {
+  title: string;
+  description?: string;
+  metaImg?: string;
+}
+
+const {
+  title,
+  description = "O Arco Talents é um programa para professores que tem o objetivo de formar e conectar talentos para transformar o recrutamento de um obstáculo operacional em uma vantagem competitiva.",
+  metaImg = "/images/meta-img-index.png",
+} = Astro.props;
+
+
+const siteUrl = "https://arcotalents.com.br";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = `${siteUrl}${metaImg}`;
+
+const faviconImg = await getImage({ src: '/favicon.ico', width: 32, height: 32 });
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <AstroFont
+    config={[
+      {
+        name: "Work Sans",
+        src: [],
+        googleFontsURL: "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+        preload: false,
+        display: "swap",
+        selector: "body",
+        fallback: "sans-serif",
+        fetch: true,
+      },
+    ]}
+  />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#CC1A1A" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO local -->
+    <meta name="geo.region" content="BR-SP" />
+    <meta name="geo.placename" content="São Paulo, Curitiba" />
+
+    <!-- Favicon — sem duplicatas -->
+    <link rel="icon" type="image/png" href={faviconImg.src} />
+    <link rel="apple-touch-icon" href={faviconImg.src} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arco Talents" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Education",
+        "name": "Arco Talents",
+        "alternateName": "Arco Educação",
+        "description": "Arco Talents: Repositório de currículos que conecta os melhores talentos do mercado à rede de escolas que utilizam as soluções bilíngues da Arco.",
+        "url": "https://arcotalents.com.br",
+        "logo": "https://arcotalents.com.br/logo.png",
+        "image": "https://arcotalents.com.br/meta-img.png",
+        "email":"assessoriaimprensa@arcoeducacao.com.br",
+        "telephone": "+5512996172352",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Augusta, 2840 - Jardins, São Paulo - SP, 01412-100",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "01412-100",
+          "addressCountry": "BR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-23.56501329823495",
+          "longitude": "-46.6677378846594"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          },
+        ],
+        "priceRange": "$$",
+        "areaServed": {
+          "@type": "City",
+          "name": "São Paulo"
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "Arco Talents",
+          "jobTitle": "Repositório de currículos da Arco Educação",
+          "description": "Repositório de currículos que conecta os melhores talentos do mercado à rede de escolas que utilizam as soluções bilíngues da Arco."
+        },
+        "sameAs": [
+            "https://www.youtube.com/arco-educacao",
+            "https://www.facebook.com/arcoeducacaoinst",
+            "https://www.instagram.com/arcoeducacao",
+            "https://www.linkedin.com/company/arcoeducacao"
+        ]
+      }
+    </script>
+        <script is:inline>
+        document.documentElement.style.setProperty('--header-height', '0px');
+      </script>
+      
+  </head>
+
+  <body class="bg-white" >
+    
+    <SvgDef />
+  
+      <main class="relative">
+      
+          <slot />
+        
+      </main>
+   
+    <script>
+      import '/src/scripts/main.js';
+    </script>
+  </body>
+</html>
